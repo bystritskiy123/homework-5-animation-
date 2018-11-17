@@ -1,0 +1,79 @@
+#sidebar-toggler{
+  display: none;
+}
+#sidebar{
+border:2px solid #2196F3;
+background:red;
+border-radius:10px;
+display: block;
+position: fixed;
+list-style: none;
+height:30%;
+width:30%;
+left:-100%;     
+transition:1s;
+}
+#sidebar:hover{
+    -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.5);    
+}
+#sidebar-toggler:checked+#sidebar{
+  left:40%;
+   top:10%; 
+}
+#sidebar ul li{
+list-style:none;
+margin-top:1%;
+margin-left:35%;     
+}
+label h2{
+cursor:pointer;
+width:10%;
+height:20%;
+background:red;
+border-radius:10px;     
+}
+
+.button{
+background:yellow;
+font-size:130%;     
+}
+/*form*/
+.main {
+	position: absolute;
+	height:100%;
+	width:100%;
+	top:0;
+	left:0;
+	display:none;
+}
+.form {
+		position: relative;
+		margin:4px auto;
+		z-index:2;
+		width:50%;
+		height:100%;
+		padding:40px 20px;
+		border:2px solid blue;
+		border-radius:20px;
+		background:black;
+	}
+
+.form input {
+			width:96%;
+			padding:5% 0; 
+			margin-top:5%;
+			border-radius:10px;
+		}
+
+.form #submitButton{
+margin-top:20%;
+margin-left:10%;	
+background:#d19f25;
+width:80%;
+padding:7%; 
+font-size:100%;
+text-decoration: none;
+}
+/*form*/

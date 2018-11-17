@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animation</title>
+    <link rel="stylesheet" href="./index2.css"/>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+<body>
+<!--Стартова кнопка-->
+ <label for="sidebar-toggler"><h2 align="center">Жми</h2></label>
+<input type="checkbox" id="sidebar-toggler"/><!--Стартова кнопка-->
+<div id="sidebar"><!--Основной блок-->
+<ul><!--menu-->
+<li><button class="button">Первая</button></li>
+<li><button class="button">Вторая</button></li>
+<li><button class="button">Третья</button></li>
+<li><button class="button">Четвёртая</button></li>
+<li><input  value="Проверка данных"  class="button" type="button" onClick="showPopup();"/></li>
+</ul><!--menu-->
+	<div  class="main"><!--Форма проверки данных-->
+	    	<div class="form">
+			<form action ='#' method="post" id="form">
+             <label for="email">
+                    <input type="email" name="email" value="email">
+                </label>
+                <input type="submit" id="submitButton" value="Отправка">
+			</form>
+    </div>  
+	</div><!--Форма проверки данных-->
+	</div><!--Основной блок-->
+<!--Скрипты-->
+<script>
+function showPopup() {
+	$(".main").fadeIn(800); // Медленно выводим изображение
+}   
+</script>
+<script>
+setInterval(function submitButton(){
+    var form = document.getElementById("form");
+    var subButton = document.getElementById("submitButton");
+    if (form.email.value==""){
+        subButton.disabled = true;
+    }
+    else{
+        subButton.disabled=false;
+    }
+};
+</script><!--Скрипты-->
+</body>
+</html>

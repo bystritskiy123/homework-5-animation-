@@ -18,15 +18,19 @@
 <li><button class="button">Четвёртая</button></li>
 <li><input  value="Проверка данных"  class="button" type="button" onClick="showPopup();"/></li>
 </ul><!--menu-->
-	<div  class="main"><!--Форма проверки данных-->
-	    	<div class="form">
-			<form>
-                <input type="email" class="input" name="email" value="email"/>
-                <input type="submit" onclick = 'submitButton()' id="submitButton" value="Отправка"/>
+<div class="main"><!--Form-->
+        <div class="main">
+			<form action="" method="get" id="form">
+           <h3>NAME</h3>
+            <input type="text" name="name" class="input"/>
+            <h3>EMAIL</h3>
+            <input type="email" name="email" class="input"/>
+            <input type="submit" id="submitButton" value="Отправка"/>
 			</form>
-    </div>  
-	</div><!--Форма проверки данных-->
-	</div><!--Основной блок-->
+    </div> 
+</div><!--Form-->			 
+             
+
 <!--Скрипты-->
 <script>
 function showPopup() {
@@ -34,7 +38,16 @@ function showPopup() {
 }   
 </script>
 <script>
- 
+ setInterval(function submitButton(){
+    var form = document.getElementById("form");
+    var subButton = document.getElementById("submitButton");
+    if (form.name.value == "" || form.email.value==""){
+        subButton.disabled = true;
+    }
+    else {
+        subButton.disabled=false;  
+    }
+}, 10);
 </script><!--Скрипты-->
 </body>
 </html>

@@ -8,30 +8,46 @@
 </head>
 <body>
 <!--Стартова кнопка-->
- <label for="sidebar-toggler"><h2 align="center">Жми</h2></label>
-<input type="checkbox" id="sidebar-toggler"/><!--Стартова кнопка-->
+<button onclick="showMenu()" class="b1"></button>
 <div id="sidebar"><!--Основной блок-->
 <ul><!--menu-->
 <li><button  class="button">Первая</button></li>
 <li><button class="button">Вторая</button></li>
 <li><button class="button">Третья</button></li>
 <li><button class="button">Четвёртая</button></li>
-<li><input  value="Проверка данных"  class="button" type="button" onClick="showPopup();"/></li>
+<li><button  class="button" onClick="showPopup();">Проверка данных</button>
 </ul><!--menu-->
 <div class="main"><!--Form-->
-        <div class="main">
 			<form action="" method="get" id="form">
            <h3>NAME</h3>
             <input type="text" name="name" class="input"/>
             <h3>EMAIL</h3>
             <input type="email" name="email" class="input"/>
             <input type="submit" id="submitButton" value="Отправка"/>
-			</form>
-    </div> 
-</div><!--Form-->			 
+			</form><!--Form--> 
+</div><!--Основной блок-->		 
              
 
 <!--Скрипты-->
+<script>
+var count=0; 
+var sidebar;
+var img;
+function showMenu(){
+    if (count%2==0){
+        parent = document.getElementById("sidebar");
+        parent.style.cssText="left:-20%; animation-name: sidebar; \
+        animation-duration:2s; animation-fill-mode: forwards;";
+        img = document.getElementsByTagName("img")[0];
+        count++;
+    }
+    else{ 
+        parent.style.cssText="left: 0%; animation-name: sidebar2; \
+        animation-duration:2s; animation-fill-mode: forwards;";                    
+        count++;
+    }
+}
+</script>
 <script>
 function showPopup() {
 	$(".main").fadeIn(800); // Медленно выводим изображение
